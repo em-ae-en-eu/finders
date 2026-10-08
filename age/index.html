@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#A8D8F5">
+    <title>AgeFinder!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="age.css">
+    <meta name="color-scheme" content="only light">
+</head>
+<body class="theme-blue">
+    <main class="card">
+        <h1>Age Finder 🎂</h1>
+        <p class="intro">Enter your date of birth to find your age:</p>
+
+        <div class="names">
+            <div class="field">
+                <label for="birthdate">Date of birth</label>
+                <input type="date" id="birthdate">
+            </div>
+        </div>
+
+        <button onclick="findAge()">Find Age</button>
+
+        <p id="result" class="result" aria-live="polite"></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

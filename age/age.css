@@ -1,0 +1,25 @@
+/* Age-only styles: background emojis */
+.bg-emojis {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-emoji {
+  position: absolute;
+  opacity: 0.85;
+  animation: bloom 0.6s ease-out both;
+}
+
+@keyframes bloom {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(var(--rotate));
+  }
+  to {
+    opacity: 0.85;
+    transform: scale(1) rotate(var(--rotate));
+  }
+}

@@ -54,6 +54,21 @@
   --focus-ring: rgba(198, 40, 40, 0.2);
 }
 
+.theme-blue {
+  --bg: #A8D8F5;
+  --card: #E4F4FC;
+  --accent: #2B8BC4;
+  --accent-hover: #1F6FA3;
+  --text: #1A3A52;
+  --input-bg: #F7FBFE;
+  --input-border: #A8D8F5;
+
+  --shadow: rgba(26, 58, 82, 0.2);
+  --placeholder: rgba(26, 58, 82, 0.5);
+  --focus-ring: rgba(43, 139, 196, 0.2);
+  --result-bg: #fff;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
