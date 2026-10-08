@@ -1,0 +1,198 @@
+/* ---------- Foundations ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #F4A6C0;
+  --card: #FFE3EC;
+  --accent: #D6336C;
+  --accent-hover: #B8285A;
+  --text: #4A1D35;
+  --input-bg: #FFF8FA;
+  --input-border: #F4A6C0;
+
+  --font-heading: "Fredoka", sans-serif;
+  --font-body: "Nunito", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ---------- Card ---------- */
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1.5rem;
+  background-color: var(--card);
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(74, 29, 53, 0.2);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.intro {
+  margin: 0 0 1.5rem;
+}
+
+/* ---------- Form ---------- */
+.names {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem; /* 16px or more stops iPhones zooming in on focus */
+  color: var(--text);
+  background-color: var(--input-bg);
+  border: 2px solid var(--input-border);
+  border-radius: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder {
+  color: rgba(74, 29, 53, 0.5);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(214, 51, 108, 0.2);
+}
+
+/* ---------- Button ---------- */
+button {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #fff;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
+
+/* ---------- Result ---------- */
+.result {
+  margin: 1.5rem 0 0;
+  padding: 1.25rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.35rem;
+  background-color: #fff;
+  border: 2px dashed var(--accent);
+  border-radius: 18px;
+  animation: pop 0.35s ease-out;
+}
+
+/* Hide the box while there's no result yet */
+.result:empty {
+  display: none;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ---------- Background emojis ---------- */
+.bg-emojis {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .bg-emoji {
+    position: absolute;
+    opacity: 0.85;
+    animation: bloom 0.6s ease-out both;
+  }
+  
+  @keyframes bloom {
+    from {
+      opacity: 0;
+      transform: scale(0) rotate(var(--rotate));
+    }
+    to {
+      opacity: 0.85;
+      transform: scale(1) rotate(var(--rotate));
+    }
+  }
+
+/* ---------- Larger screens ---------- */
+@media (min-width: 600px) {
+  .card {
+    padding: 2.5rem 2rem;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Respect people who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
