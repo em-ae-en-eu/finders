@@ -37,6 +37,7 @@
   --shadow: rgba(27, 58, 42, 0.2);
   --placeholder: rgba(27, 58, 42, 0.5);
   --focus-ring: rgba(27, 127, 69, 0.2);
+  --result-bg: #fff;
 }
 
 .theme-red {
